@@ -43,7 +43,6 @@ The application follows a layered backend architecture with a React-based fronte
 - Stateless authentication
 - Protected REST APIs
 - Method-level authorization using `@PreAuthorize`
-- Automatic handling of expired/invalid JWT sessions
 - Input validation
 - Global exception handling
 
@@ -100,7 +99,6 @@ Administrators have access to the complete academic management system.
 **Student Enrollment**
 - Enroll students into courses
 - View course enrollments
-- Remove course enrollment
 - Maintain student-course relationships
 
 **Attendance**
@@ -135,9 +133,6 @@ Faculty members have access to their assigned academic activities.
 - Designation
 - Email
 - Assigned courses
-- Students associated with assigned courses
-- Attendance records
-- Marks uploaded
 
 **Course Management**
 - View assigned courses
@@ -515,7 +510,10 @@ DB_USERNAME
 DB_PASSWORD
 MAIL_USERNAME
 MAIL_PASSWORD
+JWT_SECRET
 ```
+
+> Do not commit `.env` files, credentials, or secrets to GitHub.
 
 ### 4. Start the Backend
 
