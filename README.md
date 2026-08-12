@@ -517,8 +517,6 @@ MAIL_USERNAME
 MAIL_PASSWORD
 ```
 
-> Do not commit `.env` files or credentials to GitHub.
-
 ### 4. Start the Backend
 
 From the project root:
