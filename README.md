@@ -1,198 +1,234 @@
 # 🎓 CampusHub
 
-> A full-stack Smart Campus Management System built using **Spring Boot**, **React**, **PostgreSQL**, and **JWT Authentication** with **Role-Based Access Control (RBAC)**.
+> A full-stack Smart Campus Management Platform built with React, Spring Boot, Spring Security, JWT, and PostgreSQL.
+
+CampusHub is a role-based campus management system designed to bring common academic and administrative workflows into a single platform.
+
+The system provides separate experiences for **Administrators, Faculty members, and Students**, with secure authentication and role-based access to academic data and operations.
 
 ---
 
-## 📖 Overview
+## 📌 Overview
 
-CampusHub is an enterprise-inspired campus management platform designed to streamline academic administration through secure role-based access control.
+CampusHub provides a centralized platform for managing:
 
-The application enables administrators, faculty members, and students to efficiently manage academic records, attendance, courses, and marks through dedicated dashboards.
+- Departments
+- Students
+- Faculty
+- Courses
+- Student-course enrollment
+- Attendance
+- Marks
+- Grades
+- Academic results
+- SGPA and CGPA
+- Student reports
+- Academic analytics
+
+The application follows a layered backend architecture with a React-based frontend communicating with Spring Boot REST APIs.
 
 ---
 
-## ✨ Current Progress
+# ✨ Key Features
 
-### ✅ Completed
+## 🔐 Authentication & Security
 
-- JWT Authentication
+- JWT-based authentication
 - Role-Based Access Control (RBAC)
-- Admin Dashboard
-- Department Management
-- Student Management
-- Faculty Management
-- Course Management
-- Attendance Records (Admin View)
-- Marks Records (Admin View)
-- REST APIs with Spring Boot
-- PostgreSQL Database Integration
-- Swagger API Documentation
-
-### 🚧 In Progress
-
-- Faculty Dashboard
-- Student Dashboard
-
-### 📌 Planned
-
-- Advanced Search & Filtering
-- Dashboard Analytics
-- Charts & Reports
-- Responsive UI Improvements
-- Landing Page
-- Profile Management
-- CSV/PDF Export
-- Cloud Deployment
-
----
-
-# 🏗️ System Architecture
-
-```
-                React Frontend
-                      │
-                      ▼
-             REST API (Spring Boot)
-                      │
-                      ▼
-           Spring Security + JWT
-                      │
-                      ▼
-                PostgreSQL Database
-```
-
----
-
-# 🚀 Tech Stack
-
-## Backend
-
-- Java 21
-- Spring Boot
-- Spring Security
-- JWT Authentication
-- Spring Data JPA
-- Hibernate
-- Maven
-
-## Frontend
-
-- React
-- Bootstrap
-- Axios
-- React Router
-
-## Database
-
-- PostgreSQL
-
-## Tools
-
-- Git
-- GitHub
-- Postman
-- Swagger UI
-- Docker
+- Roles:
+  - `ADMIN`
+  - `FACULTY`
+  - `STUDENT`
+- Password encryption using Spring Security
+- Stateless authentication
+- Protected REST APIs
+- Method-level authorization using `@PreAuthorize`
+- Automatic handling of expired/invalid JWT sessions
+- Input validation
+- Global exception handling
 
 ---
 
 # 👨‍💼 Admin Module
 
-- Dashboard
-- Department Management
-- Student Management
-- Faculty Management
-- Course Management
-- Attendance Records
-- Marks Records
+Administrators have access to the complete academic management system.
 
----
+### Dashboard
 
-# 👨‍🏫 Faculty Module *(In Progress)*
+- Total students
+- Total faculty
+- Total departments
+- Total courses
+- Attendance records
+- Marks records
 
-- Dashboard
-- Attendance Management
-- Marks Management
-- Assigned Courses
-- Student Performance
+### Department Management
 
----
+- Create departments
+- View departments
+- Update departments
+- Delete departments using soft delete
 
-# 👨‍🎓 Student Module *(Planned)*
+### Student Management
 
-- Dashboard
-- View Attendance
-- View Marks
-- Academic Progress
-- Profile
-
----
-
-# 🔐 Security Features
-
-- JWT Authentication
-- Role-Based Authorization
-- Password Encryption
-- Protected REST APIs
-- Global Exception Handling
-- Input Validation
-
----
-
-# 📂 Project Structure
-
-```
-CampusHub
-│
-├── src/                        # Spring Boot Backend
-│
-├── campushub-frontend/         # React Frontend
-│
-├── Dockerfile
-├── docker-compose.yml
-├── pom.xml
-└── README.md
-```
-
----
-
-# 📸 Screenshots
-
-> Screenshots will be added as development progresses.
-
----
-
-# 🎯 Future Enhancements
-
-- Faculty Dashboard
-- Student Dashboard
-- Search & Filtering
+- Create students
+- View students
+- Update students
+- Delete students
+- Search students
+- Filter students
 - Pagination
-- Dashboard Analytics
-- Charts
-- Profile Pictures
-- Email Notifications
-- Landing Page
-- Dark Mode
-- Cloud Deployment
+- Student profile information
+
+### Faculty Management
+
+- Create faculty
+- View faculty
+- Update faculty
+- Delete faculty
+- Search and filter faculty
+- Faculty profile information
+
+### Course Management
+
+- Create courses
+- View courses
+- Update courses
+- Delete courses
+- Search courses
+- Filter courses
+- Pagination
+- Assign faculty to courses
+- Associate courses with departments
+- Maintain semester and academic year information
+
+### Student Enrollment
+
+- Enroll students into courses
+- View course enrollments
+- Remove course enrollment
+- Maintain student-course relationships
+
+### Attendance
+
+- View attendance records
+- View attendance by course and date
+- Monitor attendance status
+
+### Marks
+
+- View marks records
+- View marks by course
+- Monitor student academic performance
+
+### Analytics
+
+- Student reports
+- Topper information
+- Pass percentage
+- Average marks
+- Course average marks
+- Attendance percentage
+- SGPA/CGPA information
 
 ---
 
-# 🎯 Project Goal
+# 👨‍🏫 Faculty Module
 
-The objective of CampusHub is to simulate a real-world University ERP system by implementing secure authentication, role-based access control, scalable backend architecture, and a modern frontend.
+Faculty members have access to their assigned academic activities.
 
-The project is being developed incrementally with a focus on clean architecture, maintainability, and enterprise-level design practices.
+### Faculty Dashboard
+
+- Faculty profile information
+- Employee ID
+- Department
+- Designation
+- Email
+- Assigned courses
+- Students associated with assigned courses
+- Attendance records
+- Marks uploaded
+
+### Course Management
+
+- View assigned courses
+- View students enrolled in assigned courses
+
+### Attendance Management
+
+- View course students
+- Mark attendance
+- Bulk attendance marking
+- Update attendance
+- View attendance records
+
+### Marks Management
+
+- View students for assigned courses
+- Enter academic marks
+- Manage IA1, IA2 and ESA marks
+- Calculate total marks and grades
+- Update marks
+- View marks records
 
 ---
 
-# 👩‍💻 Author
+# 👨‍🎓 Student Module
 
-**Preeti Rajkumar Kotabagi**
+Students can access their own academic information.
 
-- GitHub: https://github.com/preetikotabagi
+### Student Dashboard
+
+- Student profile information
+- Department
+- Semester
+- Academic information
+- Enrolled courses
+
+### My Courses
+
+- View enrolled courses
+- Course code
+- Course name
+- Credits
+- Semester
+- Academic year
+- Faculty information
+
+### My Attendance
+
+- View attendance records
+- Course-wise attendance records
+- Attendance dates
+- Present/Absent status
+- Attendance remarks
+- Overall attendance percentage
+
+### My Marks
+
+- View marks for enrolled courses
+- IA1 marks
+- IA2 marks
+- ESA marks
+- Total marks
+- Grade
+- Grade point
+
+### Results
+
+- Semester-wise SGPA
+- Overall CGPA
+- Total credits
+- Semester credit information
+- Academic performance by course
 
 ---
 
-## ⭐ If you like this project, consider giving it a Star!
+# 📊 Academic Result Calculation
+
+CampusHub calculates SGPA and CGPA using a credit-weighted approach.
+
+For semester GPA:
+
+```text
+SGPA = Σ(Credit × Grade Point) / Σ(Credits)
