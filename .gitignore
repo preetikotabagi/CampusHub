@@ -52,4 +52,26 @@ Thumbs.db
 # Uploads (optional - keep only if you don't want uploaded files in Git)
 uploads/
 
+# Environment files and secrets
 .env
+.env.*
+!.env.example
+!.env.sample
+
+# Local databases and backups
+*.db
+*.sqlite
+*.sqlite3
+*.sqlitedb
+*.dump
+*.bak
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Temporary files
+*.tmp
+*.temp

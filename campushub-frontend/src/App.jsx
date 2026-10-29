@@ -39,7 +39,11 @@ function App() {
                 />
                 <Route
                     path="/admin/student-enrollment"
-                    element={<StudentEnrollmentPage />}
+                    element={
+                        <ProtectedRoute allowedRole="ADMIN">
+                            <StudentEnrollmentPage />
+                        </ProtectedRoute>
+                    }
                 />
                 <Route
                     path="/faculty/courses"
@@ -49,8 +53,22 @@ function App() {
                         </ProtectedRoute>
                     }
                 />
-                <Route path="/admin/faculties" element={<FacultyPage />} />
-                <Route path="/admin/courses" element={<CoursePage />} />
+                <Route
+                    path="/admin/faculties"
+                    element={
+                        <ProtectedRoute allowedRole="ADMIN">
+                            <FacultyPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/admin/courses"
+                    element={
+                        <ProtectedRoute allowedRole="ADMIN">
+                            <CoursePage />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route
                     path="/admin/attendance"
                     element={

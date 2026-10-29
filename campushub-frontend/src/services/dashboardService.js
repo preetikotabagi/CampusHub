@@ -1,15 +1,6 @@
-import axios from "axios";
-import { getToken } from "./authService";
-
-const API_URL = "http://localhost:8081/api/dashboard";
+import api from "../api/axiosConfig";
 
 export const getDashboard = async () => {
-
-    const response = await axios.get(API_URL, {
-        headers: {
-            Authorization: `Bearer ${getToken()}`
-        }
-    });
-
+    const response = await api.get("/dashboard");
     return response.data.data;
 };

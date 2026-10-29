@@ -82,19 +82,19 @@ public class AttendanceServiceImpl implements AttendanceService {
 
                 if (attendance == null) {
 
-                Student student = studentRepository.findById(request.getStudentId())
-                        .orElseThrow(() ->
-                                new ResourceNotFoundException("Student not found"));
+                        Student student = studentRepository.findById(request.getStudentId())
+                                .orElseThrow(() ->
+                                        new ResourceNotFoundException("Student not found"));
 
-                Course course = courseRepository.findById(request.getCourseId())
-                        .orElseThrow(() ->
-                                new ResourceNotFoundException("Course not found"));
+                        Course course = courseRepository.findById(request.getCourseId())
+                                .orElseThrow(() ->
+                                        new ResourceNotFoundException("Course not found"));
 
-                attendance = Attendance.builder()
-                        .student(student)
-                        .course(course)
-                        .attendanceDate(request.getAttendanceDate())
-                        .build();
+                        attendance = Attendance.builder()
+                                .student(student)
+                                .course(course)
+                                .attendanceDate(request.getAttendanceDate())
+                                .build();
                 }
 
                 attendance.setStatus(request.getStatus());
